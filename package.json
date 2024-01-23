@@ -1,5 +1,5 @@
 {
-  "name": "youtube_node_crud",
+  "name": "api-postgres",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,17 +9,9 @@
     "typeorm": "typeorm-ts-node-commonjs",
     "migration:run": "typeorm-ts-node-commonjs migration:run -d src/database/data-source.ts"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tchesa/youtube_node_crud.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tchesa/youtube_node_crud/issues"
-  },
-  "homepage": "https://github.com/tchesa/youtube_node_crud#readme",
   "dependencies": {
     "express": "^4.17.2",
     "pg": "^8.4.0",
