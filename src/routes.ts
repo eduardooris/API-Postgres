@@ -1,19 +1,28 @@
 import { Router } from "express";
-import CreateCategoryController from "./controllers/CreateCategoryController";
-import GetAllCategoriesController from "./controllers/GetAllCategoriesController";
-import DeleteCategoryController from "./controllers/DeleteCategoryController";
-import UpdateCategoryController from "./controllers/UpdateCategoryController";
-import CreateVideoController from "./controllers/CreateVideoController";
-import GetAllVideosController from "./controllers/GetAllVideosController";
+import CreateUserController from "./controllers/CreateUsersController";
+import GetAllUsersController from "./controllers/GetAllUsersController";
+import CreateServicesController from "./controllers/CreateServiceController";
+import GetAllServicesController from "./controllers/GetAllServicesController";
+import CreateAgendasController from "./controllers/CreateAgendasController";
+import GetAllAgendasController from "./controllers/GetAllAgendasController";
+import DeleteAgendaController from "./controllers/DeleteAgendaController";
+import UpdateAgendaController from "./controllers/UpdateAgendaController";
+import GetAgendasByIdController from "./controllers/GetAgendaByIdController";
 
 const routes = Router();
 
-routes.post("/categories", new CreateCategoryController().handle);
-routes.get("/categories", new GetAllCategoriesController().handle);
-routes.delete("/categories/:id", new DeleteCategoryController().handle);
-routes.put("/categories/:id", new UpdateCategoryController().handle);
+// new user
+routes.post("/user", new CreateUserController().handle);
+routes.get("/user", new GetAllUsersController().handle);
 
-routes.post("/videos", new CreateVideoController().handle);
-routes.get("/videos", new GetAllVideosController().handle);
+// new service
+routes.post("/service", new CreateServicesController().handle);
+routes.get("/service", new GetAllServicesController().handle);
 
+// nova agenda
+routes.post("/agendas", new CreateAgendasController().handle);
+routes.get("/agendas", new GetAllAgendasController().handle);
+routes.get("/agendas/:id", new GetAgendasByIdController().handle);
+routes.delete("/agendas/:id", new DeleteAgendaController().handle);
+routes.patch("/agendas/:id", new UpdateAgendaController().handle);
 export default routes;
